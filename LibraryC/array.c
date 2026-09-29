@@ -58,6 +58,11 @@ Data array_get(const Array *arr, size_t index)
 // sets the specified array element to the value
 void array_set(Array *arr, size_t index, Data value)
 {
+    if (arr->free_function != NULL &&
+        arr->data[index] != 0 &&
+        arr->data[index] != value) {
+        arr->free_function((void*)arr->data[index]);
+    }
     arr->data[index] = value;
 }
 
