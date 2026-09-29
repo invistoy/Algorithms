@@ -4,14 +4,14 @@
 Array *array_create_and_read(FILE *input)
 {
     int n;
-    fscanf_s(input, "%d", &n);
+    fscanf(input, "%d", &n);
     /* Create array */
     Array *arr = array_create(n, NULL);
     /* Read array data */
     for (int i = 0 ; i < n ; ++i)
     {
         int x;
-        fscanf_s(input, "%d", &x);
+        fscanf(input, "%d", &x);
         array_set(arr, i, x);
     }
     return arr;
