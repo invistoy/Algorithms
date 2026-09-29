@@ -32,5 +32,4 @@ int main()
     }
 
     array_delete(arr);
-    delete d;
 }
